@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoHybrid - תתחזק או תתחרט! 💪</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #c0392b;
+      --secondary-color: #2c3e50;
+      --accent-color: #f1c40f;
+      --text-color: #ecf0f1;
+      --background-color: #1a1a1a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Rubik', sans-serif;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--text-color);
+      text-align: center;
+      padding: 3rem;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .buttons {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      padding: 1rem 2rem;
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      transform: scale(1.1);
+      background-color: var(--accent-color);
+      color: var(--secondary-color);
+    }
+
+    nav {
+      background-color: var(--secondary-color);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: var(--secondary-color);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .section h2 {
+      color: var(--accent-color);
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .tableau-embed iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      text-align: center;
+      padding: 1rem;
+      width: 100%;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .section h2 {
+        font-size: 1.8rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .tableau-embed iframe {
+        height: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GoHybrid - תן בראש! 💪</h1>
+    <p>תתחזק, תצליח, תגשים! הצטרף למשפחת הכושר שלנו 🏋️‍♂️</p>
+    <div class="buttons">
+      <button class="cta-button" data-section="market">פילוח שוק 📊</button>
+      <button class="cta-button" data-section="changes">שינויים 🔄</button>
+      <button class="cta-button" data-section="training">ניתוח אימונים 💪</button>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#dashboard">דשבורד ⚡</a></li>
+      <li><a href="#contact">צור קשר 📞</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section id="dashboard" class="section">
+      <h2>דשבורד ⚡</h2>
+      <div id="dashboard-content">
+        <h3>פילוח שוק - לפי אזורים 📊</h3>
+        <div class="tableau-embed">
+          <iframe src="https://public.tableau.com/shared/PFT6CJXZ5?:embed=true&:display_count=n&:origin=viz_share_link" title="פילוח שוק" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>צור קשר 📞</h2>
+      <p>רוצה אימון אישי או שאלות? דבר איתנו, אנחנו פה בשבילך! 😄</p>
+      <a href="mailto:support@gohybrid.com" class="cta-button">תן לנו צעקה! 📲</a>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 GoHybrid. תתחזק, תהיה היברידי! 🏃‍♂️</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.cta-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const section = button.getAttribute('data-section');
+        const content = document.getElementById('dashboard-content');
+
+        let inner = '';
+        switch (section) {
+          case 'market':
+            inner = `
+              <h3>פילוח שוק - לפי אזורים 📊</h3>
+              <div class="tableau-embed">
+                <iframe src="https://public.tableau.com/shared/PFT6CJXZ5?:embed=true&:display_count=n&:origin=viz_share_link" title="פילוח שוק" loading="lazy"></iframe>
+              </div>`;
+            break;
+          case 'changes':
+            inner = `
+              <h3>דשבורד שינויים 🔄</h3>
+              <div class="tableau-embed">
+                <iframe src="https://public.tableau.com/shared/6B37MSM9N?:embed=true&:display_count=n&:origin=viz_share_link" title="דשבורד שינויים" loading="lazy"></iframe>
+              </div>`;
+            break;
+          case 'training':
+            inner = `
+              <h3>ניתוח אימונים 💪</h3>
+              <div class="tableau-embed">
+                <iframe src="https://public.tableau.com/shared/6B37MSM9N?:embed=true&:display_count=n&:origin=viz_share_link" title="ניתוח אימונים" loading="lazy"></iframe>
+              </div>`;
+            break;
+        }
+        content.innerHTML = inner;
+      });
+    });
+  </script>
+</body>
+</html>
